@@ -71,7 +71,7 @@ if canvas_result.image_data is not None:
     img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
     st.image(img, caption="Processed Image (28x28)", width=100)
-    promptText = st.text_area("Prompt", value=f"What is this image (encoded in base64) a sketch of?: {img_base64}", height=200)
+    promptText = st.text_area("Prompt", value=f"Use the classify_image tool to classify this base64 encoded sketch image: {img_base64}", height=200)
 
     if st.button("Prompt AI"):
         with st.spinner("Running Ollama with tool calling..."):
